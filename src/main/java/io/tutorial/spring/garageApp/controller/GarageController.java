@@ -8,6 +8,7 @@ import io.tutorial.spring.garageApp.service.GarageService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class GarageController {
 

@@ -1,12 +1,11 @@
 package io.tutorial.spring.garageApp.model;
 
 import com.fasterxml.jackson.annotation.JsonTypeId;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@Entity
+@Entity()
+@Table(name = "car")
 public class Car {
 
     public enum Color{
@@ -17,11 +16,12 @@ public class Car {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String model;
     private String  brand;
 
-    @Column(name = "release_year")
+    @Column(name = "model")
     private int year;
     private Color color;
 
